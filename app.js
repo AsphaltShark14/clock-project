@@ -8,13 +8,19 @@ const tick = () => {
     const m = now.getMinutes();
     const s = now.getSeconds();
 
-    const html = `
+    const html1 = `
     <span>${h}</span> : 
     <span>${m}</span> : 
     <span>${s}</span>
     `;
 
-    clock.innerHTML = html;
+    const html2 = `
+    <span>${h}</span> : 
+    <span>${m}</span> : 
+    <span>0${s}</span>
+    `;
+
+    if (s > 9) { clock.innerHTML = html1; } else { clock.innerHTML = html2;}
 
 }
 
